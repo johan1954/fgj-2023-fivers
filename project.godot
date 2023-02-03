@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "Shroom_base",
+"language": "GDScript",
+"path": "res://Src/shroom_base.gd"
+} ]
+_global_script_class_icons={
+"Shroom_base": ""
+}
+
 [application]
 
 config/name="Fivers"

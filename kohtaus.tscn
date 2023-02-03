@@ -2,7 +2,7 @@
 
 [ext_resource path="res://GFX Assets/icon.png" type="Texture" id=1]
 [ext_resource path="res://Src/new_script.gd" type="Script" id=2]
-[ext_resource path="res://Src/MANAGER.gd" type="Script" id=3]
+[ext_resource path="res://Src/Classes/CardBase.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33, 32 )
@@ -33,3 +33,10 @@ shape = SubResource( 2 )
 
 [node name="MANAGER" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 132.0
+margin_top = 144.0
+margin_right = 172.0
+margin_bottom = 158.0
+text = "KORTTINIMI"

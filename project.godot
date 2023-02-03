@@ -24,6 +24,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Src/Classes/CardSpeedBoost.gd"
 }, {
+"base": "Node2D",
+"class": "MapEdge",
+"language": "GDScript",
+"path": "res://Src/Map/MapEdge.gd"
+}, {
+"base": "Node2D",
+"class": "MapNode",
+"language": "GDScript",
+"path": "res://Src/Map/MapNode.gd"
+}, {
+"base": "Reference",
+"class": "MapState",
+"language": "GDScript",
+"path": "res://Src/Map/MapState.gd"
+}, {
 "base": "Node",
 "class": "Shroom_base",
 "language": "GDScript",
@@ -33,6 +48,9 @@ _global_script_class_icons={
 "CardAttackNode": "",
 "CardBase": "",
 "CardSpeedBoost": "",
+"MapEdge": "",
+"MapNode": "",
+"MapState": "",
 "Shroom_base": ""
 }
 

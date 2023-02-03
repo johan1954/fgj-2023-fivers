@@ -1,4 +1,5 @@
 extends Node2D
+var MapEdge = load("res://Src/Map/MapEdge.gd")
 
 class_name MapNode
 

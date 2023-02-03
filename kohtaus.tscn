@@ -40,3 +40,7 @@ margin_top = 144.0
 margin_right = 172.0
 margin_bottom = 158.0
 text = "KORTTINIMI"
+
+[node name="UI-Control-Node" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0

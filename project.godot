@@ -42,6 +42,11 @@ config/name="Fivers"
 run/main_scene="res://kohtaus.tscn"
 config/icon="res://GFX Assets/icon.png"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

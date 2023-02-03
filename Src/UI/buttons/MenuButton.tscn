@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Src/UI/theme/hover_styleboxflat.tres" type="StyleBox" id=1]
+[ext_resource path="res://Src/UI/theme/normal_styleboxflat.tres" type="StyleBox" id=2]
+
+[node name="Button" type="Button"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 165.0
+margin_bottom = 38.0
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/normal = ExtResource( 2 )

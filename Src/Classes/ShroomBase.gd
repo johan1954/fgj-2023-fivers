@@ -9,6 +9,7 @@ var title = "Shroom"
 var base_draft_amount = 3
 var base_card_pick_amount = 1
 var cardpack_array = []
+var rng = RandomNumberGenerator.new()
 
 func change_resource_points(points):
 	self.resource_points += points
@@ -24,3 +25,10 @@ func add_cards(cards):
 	
 func remove_card_by_index(index):
 	self.cardpack_array.remove(index)
+	
+func draft_cards():
+	var selected = []
+	for _i in range(0, self.base_draft_amount):
+		selected.append(rng.randi_range(0, self.base_draft_amount-1))
+		
+	return selected

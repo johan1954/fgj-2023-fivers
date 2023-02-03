@@ -12,7 +12,7 @@ config_version=4
 
 config/name="Fivers"
 run/main_scene="res://kohtaus.tscn"
-config/icon="res://icon.png"
+config/icon="res://GFX Assets/icon.png"
 
 [gui]
 

@@ -14,7 +14,7 @@ var base_dmg = 0
 var base_node_health_change_speed = 0
 # Card arrays
 var cardpack_array = []
-var hand_vards_array = []
+var hand_cards_array = []
 # RNG class
 var rng = RandomNumberGenerator.new()
 
@@ -28,11 +28,14 @@ func change_draft_amount(draft_amount):
 func change_cardpicks(picks):
 	self.base_card_pick_amount += picks
 	
-func add_cards(cards):
+func add_cards_to_pack(cards):
 	self.cardpack_array.append(cards)
 	
-func remove_card_by_index(index):
+func remove_card_from_pack(index):
 	self.cardpack_array.remove(index)
+
+func remove_card_from_hand(index):
+	self.hand_cards_array.remove(index)
 	
 func draft_cards():
 	var selected = []

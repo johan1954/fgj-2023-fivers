@@ -16,6 +16,7 @@ var base_node_health_change_speed = 0
 var cardpack_array = []
 var hand_cards_array = []
 # RNG class
+
 var rng = RandomNumberGenerator.new()
 
 # Class methods

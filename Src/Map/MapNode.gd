@@ -72,13 +72,15 @@ func capture_node(new_owner: Enums.Owner):
 	
 func capture_all_edges(new_owner):
 	for i in edges:
+		if (i.belongs_to == new_owner):
+			continue
 		if (i.belongs_to == Enums.Owner.NONE):
 			i.belongs_to = new_owner
+		if (i.belongs_to == Enums.Owner.PLAYER):
+			i.belongs_to = new_owner
 			i.control = 0
-		elif (i.belongs_to != new_owner):
-			if (i.control >= 0):
-				i.belongs_to = new_owner
-			
+		if (i.belongs_to == Enums.Owner.ENEMY):
+			continue
 
 func _process(delta):
 	if (attacker != Enums.Owner.NONE):

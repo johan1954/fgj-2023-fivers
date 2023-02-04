@@ -4,6 +4,10 @@ extends Node
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
+			var map = get_node("/root/Map")
+			for child in map.get_children():
+				child.queue_free()
+				
 			get_tree().change_scene_to_file("res://MainMenu.tscn")
 			print(get_tree().get_current_scene()) 
 			#get_tree().change_scene_to_file("res://MainMenu.tscn")

@@ -1,5 +1,7 @@
 extends Node
 
+class_name MapGenerator
+
 const DESIRED_NODE_COUNT = 100
 const MIN_X = -356
 const MAX_X = 356
@@ -11,8 +13,6 @@ const MAX_EDGES = 5
 const MAX_NODE_LOOKUP = 10
 
 var rng = RandomNumberGenerator.new()
-func _ready():
-	generate_map()
 	
 func generate_map() -> MapState:
 	var map_state = MapState.new()

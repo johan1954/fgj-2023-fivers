@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Fivers"
-run/main_scene="res://kohtaus.tscn"
+run/main_scene="res://MainMenu.tscn"
 config/icon="res://GFX Assets/icon.png"
 
 [display]

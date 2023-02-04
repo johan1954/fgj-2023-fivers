@@ -1,7 +1,7 @@
 
 extends Button
 
-export var reference_path = ""
+export var reference_path = "res://kohtaus.tscn"
 export(bool) var start_focused = false
 
 func _ready():
@@ -19,3 +19,5 @@ func _on_Button_Pressed():
 		get_tree().change_scene(reference_path)
 	else:
 		get_tree().quit()
+
+

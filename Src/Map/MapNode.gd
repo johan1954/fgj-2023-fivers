@@ -10,10 +10,10 @@ var rng = RandomNumberGenerator.new()
 
 var belongs_to := Owner.NONE
 
-func get_distance(other_position: Vector2):
+func get_distance(other_position: Vector2) -> float:
 	return position.distance_to(other_position)
 
-func add_edge(other_node: MapNode):
+func add_edge(other_node: MapNode) -> bool:
 	if has_edge(other_node):
 		return false
 	
@@ -27,7 +27,7 @@ func add_edge(other_node: MapNode):
 	
 	return true
 
-func has_edge(other_node: MapNode):
+func has_edge(other_node: MapNode) -> bool:
 	for edge in edges:
 		if edge.get_other_node(self) == other_node:
 			return true

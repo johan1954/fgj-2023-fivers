@@ -22,7 +22,7 @@ Map="*res://Src/Map/Map.gd"
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 run/main_scene="res://kohtaus.tscn"
 

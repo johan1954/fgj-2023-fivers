@@ -21,6 +21,10 @@ static func spawn_node(spawn_location: Vector2, map_state: MapState) -> MapNode:
 	map_state.nodes.append(new_node)
 	return new_node
 
+func delete_node(map_state: MapState):
+	Map.remove_child(self)
+	map_state.nodes.erase(self)
+
 func get_distance(other_position: Vector2) -> float:
 	return position.distance_to(other_position)
 	
@@ -49,6 +53,16 @@ func has_edge(other_node: MapNode) -> bool:
 		if edge.get_other_node(self) == other_node:
 			return true
 	return false
+	
+func edge_distance_to_self(p1: Vector2, p2: Vector2) -> float:
+	var p3 = position
+	var l2 = p1.distance_squared_to(p2)
+	var p3_p1 = p3 - p1
+	var p2_p1 = p2 - p1
+	var t = max(0, min(1, p3_p1.dot(p2_p1) / l2))
+	var projection = p1 + t * (p2 - p1)
+	
+	return p3.distance_to(projection)
 
 func _process(delta):
 	if belongs_to == Enums.Owner.PLAYER:

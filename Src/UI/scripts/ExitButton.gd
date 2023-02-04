@@ -20,9 +20,9 @@ func _button_pressed():
 #func _process(delta):
 #	pass
 
-func alert(text: String, title: String='Message') -> void:
+func alert(alert_text: String, title: String='Message') -> void:
 	var dialog = AcceptDialog.new()
-	dialog.dialog_text = text
+	dialog.dialog_text = alert_text
 	dialog.title = title
 	dialog.ok_button_text = "Ole hyvä!"
 	dialog.connect('modal_closed',Callable(dialog,'queue_free'))

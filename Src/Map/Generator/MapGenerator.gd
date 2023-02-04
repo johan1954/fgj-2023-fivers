@@ -29,7 +29,7 @@ func generate_nodes(map_state):
 		var new_y = rng.randf_range(MIN_Y, MAX_Y)
 		var new_location = Vector2(new_x, new_y)
 		
-		var shortest_distance = map_state.find_closest_node(new_location)
+		var shortest_distance = map_state.find_closest_node(new_location)[1]
 		if shortest_distance < MIN_DISTANCE:
 			continue
 		var new_node = map_node.instance()

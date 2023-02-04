@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Shroom_base",
 "class": "Aggressive_shroom",
 "language": "GDScript",
-"path": "res://AggressiveShroom.gd"
+"path": "res://Src/Classes/AggressiveShroom.gd"
 }, {
 "base": "CardBase",
 "class": "CardAttackNode",
@@ -52,7 +52,7 @@ _global_script_classes=[ {
 "base": "Shroom_base",
 "class": "Symbiotic_shroom",
 "language": "GDScript",
-"path": "res://SymbioticShroom.gd"
+"path": "res://Src/Classes/SymbioticShroom.gd"
 } ]
 _global_script_class_icons={
 "Aggressive_shroom": "",

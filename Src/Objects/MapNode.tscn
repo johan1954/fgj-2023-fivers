@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://10brnqlrssxg"]
 
-[ext_resource path="res://Src/Map/MapNode.gd" type="Script" id=1]
-[ext_resource path="res://GFX Assets/pallo.png" type="Texture2D" id=2]
+[ext_resource type="Script" path="res://Src/Map/MapNode.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dta7l3hurij48" path="res://GFX Assets/pallo.png" id="2"]
 
 [node name="Pallo" type="Sprite2D"]
-scale = Vector2( 0.2, 0.2 )
 z_index = 1
-texture = ExtResource( 2 )
-script = ExtResource( 1 )
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2")
+script = ExtResource("1")

@@ -25,6 +25,7 @@ GlobalAudio="*res://Audio/GlobalAudio.gd"
 [display]
 
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 run/main_scene="res://kohtaus.tscn"
 
 [global]

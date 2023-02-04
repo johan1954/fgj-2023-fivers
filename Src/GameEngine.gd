@@ -1,6 +1,5 @@
 extends Node
 
-
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
@@ -13,12 +12,11 @@ func _unhandled_input(event):
 			print(get_tree().get_current_scene()) 
 			#get_tree().change_scene_to_file("res://MainMenu.tscn")
 
-
 var map_generator : MapGenerator
 
-const CAPTURE_THRESHOLD = 20
+const CONTROL_TIME = 20
 
-var player_growth_speed = 10
+var player_growth_speed = 30
 var enemy_growth_speed = -5
 
 var player_damage_output = 0

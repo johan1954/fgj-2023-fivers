@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlptxyf8b6n87"]
 
-[ext_resource type="PackedScene" path="res://Src/UI/ControlForMainMenuUI.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://drxk1g7gtoer0" path="res://Src/UI/ControlForMainMenuUI.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://cgriras0uwarm" path="res://GFX Assets/MainBG4K.jpg" id="2"]
 [ext_resource type="AudioStream" uid="uid://casgcafvhqmtx" path="res://Audio/game_theme_1_1.wav" id="3_dmwrm"]
 [ext_resource type="AudioStream" uid="uid://cfl6ti6ro1a0c" path="res://Audio/FGJ23_Shroom_rts_transition.wav" id="4_i4yea"]
@@ -9,35 +9,23 @@
 position = Vector2(-24, -8)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -840.0
-offset_top = -328.0
-offset_right = 848.0
-offset_bottom = 800.0
+offset_left = -257.0
+offset_top = 8.0
+offset_right = 1431.0
+offset_bottom = 1136.0
 texture = ExtResource("2")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="ControlForMainMenuUI" parent="." instance=ExtResource("1")]
-custom_minimum_size = Vector2(1280, 720)
-layout_mode = 3
-anchors_preset = 15
-offset_left = -648.0
-offset_top = -376.0
-offset_right = 632.0
-offset_bottom = 344.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = 4.0
+offset_right = 0.0
+offset_bottom = 599.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="menuNewGame" parent="ControlForMainMenuUI" index="0"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1125
-anchor_top = 0.00555556
-anchor_right = 0.1125
-anchor_bottom = 0.00555556
 offset_left = 448.0
 offset_top = 300.0
 offset_right = 612.0
@@ -45,12 +33,6 @@ offset_bottom = 337.0
 metadata/_edit_use_anchors_ = true
 
 [node name="menuSettings" parent="ControlForMainMenuUI" index="1"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1125
-anchor_top = 0.0166667
-anchor_right = 0.1125
-anchor_bottom = 0.0166667
 offset_left = 448.0
 offset_top = 364.0
 offset_right = 612.0
@@ -58,20 +40,11 @@ offset_bottom = 401.0
 metadata/_edit_use_anchors_ = true
 
 [node name="menuExit" parent="ControlForMainMenuUI" index="2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1125
-anchor_top = 0.0166667
-anchor_right = 0.1125
-anchor_bottom = 0.0166667
 offset_left = 448.0
 offset_top = 428.0
 offset_right = 612.0
 offset_bottom = 465.0
 metadata/_edit_use_anchors_ = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(4, 4)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_dmwrm")

@@ -23,13 +23,14 @@ func start_game():
 	map_generator = MapGenerator.new()
 	map_generator.generate_map()
 
-	var new_card_button = AssetsPreload.CARD_BUTTON_NODE.instantiate()
-	Map.add_child(new_card_button)
-	new_card_button = AssetsPreload.CARD_BUTTON_NODE.instantiate()
-	new_card_button.message = "Test 1"
-	new_card_button.console_print()
-	Map.add_child(new_card_button)
-	new_card_button.position = Vector2(-50, -50)
-	new_card_button.message = "Test 2"
-	new_card_button.console_print()
+#	var new_card_button = AssetsPreload.CARD_BUTTON_NODE.instantiate()
+#	Map.add_child(new_card_button)
+#	new_card_button = AssetsPreload.CARD_BUTTON_NODE.instantiate()
+#	new_card_button.message = "Test 1"
+#	new_card_button.z_index = 1
+#	new_card_button.console_print()
+#	Map.add_child(new_card_button)
+#	new_card_button.position = Vector2(-50, -50)
+#	new_card_button.message = "Test 2"
+#	new_card_button.console_print()
 	

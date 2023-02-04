@@ -1,23 +1,22 @@
 class_name MapState
 
-var nodes = []
+var nodes: Array[MapNode]
 
-func find_closest_node(position: Vector2):
+func find_closest_node(other_position: Vector2) -> MapNode:
 	if nodes.size() == 0:
-		return [null,INF]
+		return null
 	
 	var closest_distance = INF
-	var closest_node = nodes[0]
-	for node_index in range(1, nodes.size()):
-		var node_candidate = nodes[node_index]
-		var distance = node_candidate.get_distance(position)
+	var closest_node: MapNode
+	for node in nodes:
+		var distance = node.get_distance(other_position)
 		if (distance < closest_distance):
 			closest_distance = distance
-			closest_node = node_candidate
+			closest_node = node
 			
-	return [closest_node,closest_distance]
+	return closest_node
 	
-func get_nodes_in_distance_order(position: Vector2):
+func get_nodes_in_distance_order(position: Vector2) -> Array[MapNode]:
 	var distances_and_nodes = []
 	
 	for node in nodes:
@@ -26,11 +25,19 @@ func get_nodes_in_distance_order(position: Vector2):
 		
 	distances_and_nodes.sort_custom(Callable(self,"distance_comparison"))
 	
-	var nodes2 = []
+	var ordered_nodes: Array[MapNode]
 	for node_and_distance in distances_and_nodes:
-		nodes2.append(node_and_distance[1])
+		ordered_nodes.append(node_and_distance[1])
 		
-	return nodes2
+	return ordered_nodes
+	
+func intersects_with_any_other_edge(position_1: Vector2, position_2: Vector2) -> bool:
+	for node in nodes:
+		for edge in node.edges:
+			if edge.intersect_with(position_1, position_2):
+				return true
+				
+	return false
 	
 func distance_comparison(distance_and_node_1, distance_and_node_2):
 	return distance_and_node_1[0] < distance_and_node_2[0]

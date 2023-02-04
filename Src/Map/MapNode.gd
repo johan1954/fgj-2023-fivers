@@ -2,18 +2,27 @@ extends Node2D
 class_name MapNode
 
 enum NodeTypes {NORMAL, TREE}
-enum Owner {NONE, PLAYER, ENEMY}
 
 var type: int = NodeTypes.NORMAL
 var edges: Array[MapEdge]
 var rng = RandomNumberGenerator.new()
 
-var belongs_to := Owner.NONE
+var belongs_to := Enums.Owner.NONE
 
-func get_distance(other_position: Vector2):
+func _init():
+	rng.randomize()
+	
+static func spawn_node(spawn_location: Vector2, map_state: MapState) -> MapNode:
+	var new_node = AssetsPreload.MAP_NODE_NODE.instantiate()
+	Map.add_child(new_node)
+	new_node.position = spawn_location
+	map_state.nodes.append(new_node)
+	return new_node
+
+func get_distance(other_position: Vector2) -> float:
 	return position.distance_to(other_position)
 
-func add_edge(other_node: MapNode):
+func add_edge(other_node: MapNode) -> bool:
 	if has_edge(other_node):
 		return false
 	
@@ -27,20 +36,16 @@ func add_edge(other_node: MapNode):
 	
 	return true
 
-func has_edge(other_node: MapNode):
+func has_edge(other_node: MapNode) -> bool:
 	for edge in edges:
 		if edge.get_other_node(self) == other_node:
 			return true
 	return false
 
-func _init():
-	rng.randomize()
-	belongs_to = rng.randi_range(0,3)
-
 func _process(delta):
-	if belongs_to == Owner.PLAYER:
+	if belongs_to == Enums.Owner.PLAYER:
 		modulate = Color.GREEN
-	elif belongs_to == Owner.ENEMY:
+	elif belongs_to == Enums.Owner.ENEMY:
 		modulate = Color.RED
 	else: 
 		modulate = Color.WHITE

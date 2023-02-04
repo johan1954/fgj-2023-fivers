@@ -3,10 +3,13 @@ extends Node
 class_name CardBase
 
 var title: String
-var speedIncrease: float
+var descrition: String
+var card_power: int
 
-func cardEffect() -> void:
+func get_card_effect() -> void:
 	print("Card effect, generic")
 
 func getTitle() -> String:
 	return title
+	
+

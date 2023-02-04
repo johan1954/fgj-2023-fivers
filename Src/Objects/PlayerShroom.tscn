@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://i0ackhq0y4y0"]
+
+[ext_resource type="Texture2D" uid="uid://boud4pe55l4pi" path="res://GFX Assets/sieni.png" id="1_yoqgk"]
+[ext_resource type="Script" path="res://Src/Classes/SymbioticShroom.gd" id="2"]
+
+[node name="PlayerSieni" type="Sprite2D"]
+texture = ExtResource("1_yoqgk")
+script = ExtResource("2")

@@ -20,6 +20,7 @@ config/icon="res://GFX Assets/icon.png"
 AssetsPreload="*res://Src/AssetsPreload.gd"
 Map="*res://Src/Map/Map.gd"
 GameEngine="*res://Src/GameEngine.gd"
+GlobalAudio="*res://Audio/GlobalAudio.gd"
 
 [display]
 

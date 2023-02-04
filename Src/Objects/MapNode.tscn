@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Src/Map/MapNode.gd" type="Script" id=1]
-[ext_resource path="res://GFX Assets/pallo.png" type="Texture" id=2]
+[ext_resource path="res://GFX Assets/pallo.png" type="Texture2D" id=2]
 
-[node name="Pallo" type="Sprite"]
+[node name="Pallo" type="Sprite2D"]
 scale = Vector2( 0.2, 0.2 )
 z_index = 1
 texture = ExtResource( 2 )

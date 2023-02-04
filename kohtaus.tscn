@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce335juw45m6x"]
+[gd_scene load_steps=7 format=3 uid="uid://ce335juw45m6x"]
 
 [ext_resource type="Texture2D" uid="uid://b25uruqvri1i" path="res://GFX Assets/icon.png" id="1"]
 [ext_resource type="Script" path="res://Src/AssetsPreload.gd" id="4"]
 [ext_resource type="Script" path="res://Src/Map/Map.gd" id="4_ltrcl"]
-[ext_resource type="Script" path="res://Src/Map/Generator/MapGenerator.gd" id="6"]
 
 [sub_resource type="GDScript" id="GDScript_wldfi"]
 script/source = "extends CharacterBody2D
@@ -49,9 +48,6 @@ texture = ExtResource("1")
 
 [node name="AssetsPreload" type="Node" parent="GlobalScripts"]
 script = ExtResource("4")
-
-[node name="MapGenerator" type="Node" parent="GlobalScripts"]
-script = ExtResource("6")
 
 [node name="Map" type="Node" parent="."]
 script = ExtResource("4_ltrcl")

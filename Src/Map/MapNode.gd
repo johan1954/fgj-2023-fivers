@@ -31,6 +31,8 @@ func add_edge(other_node: MapNode) -> bool:
 	edge.map_node_1 = self
 	edge.map_node_2 = other_node
 	edge.points = [position, other_node.position]
+	edge.init_text()
+	
 	edges.append(edge)
 	other_node.edges.append(edge)
 	
@@ -44,8 +46,12 @@ func has_edge(other_node: MapNode) -> bool:
 
 func _process(delta):
 	if belongs_to == Enums.Owner.PLAYER:
+		for i in edges:
+			i.capture(GameEngine.player_growth_speed * delta)
 		modulate = Color.GREEN
 	elif belongs_to == Enums.Owner.ENEMY:
+		for i in edges:
+			i.capture(GameEngine.enemy_growth_speed * delta)
 		modulate = Color.RED
 	else: 
 		modulate = Color.WHITE

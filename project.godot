@@ -6,71 +6,23 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[ {
-"base": "Shroom_base",
-"class": "Aggressive_shroom",
-"language": "GDScript",
-"path": "res://Src/Classes/AggressiveShroom.gd"
-}, {
-"base": "CardBase",
-"class": "CardAttackNode",
-"language": "GDScript",
-"path": "res://Src/Classes/CardAttackNode.gd"
-}, {
-"base": "Node",
-"class": "CardBase",
-"language": "GDScript",
-"path": "res://Src/Classes/CardBase.gd"
-}, {
-"base": "CardBase",
-"class": "CardSpeedBoost",
-"language": "GDScript",
-"path": "res://Src/Classes/CardSpeedBoost.gd"
-}, {
-"base": "Line2D",
-"class": "MapEdge",
-"language": "GDScript",
-"path": "res://Src/Map/MapEdge.gd"
-}, {
-"base": "Node2D",
-"class": "MapNode",
-"language": "GDScript",
-"path": "res://Src/Map/MapNode.gd"
-}, {
-"base": "Reference",
-"class": "MapState",
-"language": "GDScript",
-"path": "res://Src/Map/MapState.gd"
-}, {
-"base": "Node2D",
-"class": "Shroom_base",
-"language": "GDScript",
-"path": "res://Src/Classes/ShroomBase.gd"
-}, {
-"base": "Shroom_base",
-"class": "Symbiotic_shroom",
-"language": "GDScript",
-"path": "res://Src/Classes/SymbioticShroom.gd"
-} ]
-_global_script_class_icons={
-"Aggressive_shroom": "",
-"CardAttackNode": "",
-"CardBase": "",
-"CardSpeedBoost": "",
-"MapEdge": "",
-"MapNode": "",
-"MapState": "",
-"Shroom_base": "",
-"Symbiotic_shroom": ""
-}
+config_version=5
 
 [application]
 
 config/name="Fivers"
 run/main_scene="res://kohtaus.tscn"
+config/features=PackedStringArray("4.0")
 config/icon="res://GFX Assets/icon.png"
+
+[autoload]
+
+AssetsPreload="*res://Src/AssetsPreload.gd"
+Map="*res://Src/Map/Map.gd"
+
+[global]
+
+autoload=false
 
 [gui]
 

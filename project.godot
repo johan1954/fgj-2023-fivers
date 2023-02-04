@@ -44,7 +44,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Src/Map/MapState.gd"
 }, {
-"base": "Node",
+"base": "Node2D",
 "class": "Shroom_base",
 "language": "GDScript",
 "path": "res://Src/Classes/ShroomBase.gd"

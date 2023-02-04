@@ -13,6 +13,8 @@ const MAX_NODE_LOOKUP = 10
 var rng = RandomNumberGenerator.new()
 var map_node = preload("res://Src/Objects/MapNode.tscn")
 var map_edge = preload("res://Src/Objects/MapEdge.tscn")
+var player_shroom = preload("res://Src/Objects/PlayerShroom.tscn")
+var enemy_shroom = preload("res://Src/Objects/EnemyShroom.tscn")
 func _ready():
 	generate_map()
 	
@@ -21,6 +23,15 @@ func generate_map():
 	rng.randomize()
 	generate_nodes(map_state)
 	generate_edges(map_state)
+	spawn_players()
+	
+func spawn_players():
+	var player = player_shroom.instance()
+	add_child(player)
+	player.position = Vector2(MIN_X - 100, 0)
+	var enemy = enemy_shroom.instance()
+	add_child(enemy)
+	enemy.position = Vector2(MAX_X + 100, 0)
 		
 func generate_nodes(map_state):
 	var generated_nodes = 0

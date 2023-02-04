@@ -1,6 +1,4 @@
-extends Node
-
-
+extends Node2D
 
 class_name Shroom_base
 

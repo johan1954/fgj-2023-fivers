@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Src/CameraControl.gd" id="2_hmu0u"]
 [ext_resource type="Script" path="res://Src/AssetsPreload.gd" id="4"]
 [ext_resource type="Script" path="res://Src/Map/Map.gd" id="4_ltrcl"]
-[ext_resource type="Script" path="res://Src/Map/Generator/MapGenerator.gd" id="6"]
 
 [node name="Scene" type="Node2D"]
 
@@ -17,9 +16,6 @@ script = ExtResource("2_hmu0u")
 
 [node name="AssetsPreload" type="Node" parent="GlobalScripts"]
 script = ExtResource("4")
-
-[node name="MapGenerator" type="Node" parent="GlobalScripts"]
-script = ExtResource("6")
 
 [node name="Map" type="Node" parent="."]
 script = ExtResource("4_ltrcl")

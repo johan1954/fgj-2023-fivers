@@ -6,6 +6,7 @@ enum NodeTypes {NORMAL, TREE}
 var type: int = NodeTypes.NORMAL
 var edges: Array[MapEdge]
 var rng = RandomNumberGenerator.new()
+var health : int
 
 var belongs_to := Enums.Owner.NONE
 
@@ -14,6 +15,7 @@ func _init():
 	
 static func spawn_node(spawn_location: Vector2, map_state: MapState) -> MapNode:
 	var new_node = AssetsPreload.MAP_NODE_NODE.instantiate()
+	
 	Map.add_child(new_node)
 	new_node.position = spawn_location
 	map_state.nodes.append(new_node)
@@ -21,6 +23,10 @@ static func spawn_node(spawn_location: Vector2, map_state: MapState) -> MapNode:
 
 func get_distance(other_position: Vector2) -> float:
 	return position.distance_to(other_position)
+	
+func get_node_type():
+	pass
+	
 
 func add_edge(other_node: MapNode) -> bool:
 	if has_edge(other_node):

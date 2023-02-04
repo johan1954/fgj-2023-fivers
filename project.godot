@@ -23,8 +23,7 @@ GameEngine="*res://Src/GameEngine.gd"
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 run/main_scene="res://kohtaus.tscn"
 
 [global]

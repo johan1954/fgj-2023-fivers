@@ -26,6 +26,12 @@ func alert(text: String, title: String='Message') -> void:
 	dialog.title = title
 	dialog.ok_button_text = "Ole hyvä!"
 	dialog.connect('modal_closed',Callable(dialog,'queue_free'))
-	add_child(dialog)
+	dialog.set_script(_on_cancle_btn_is_pressed)
+	add_child(dialog,true)
+	print(dialog)
 	dialog.popup_centered()
+	
+func _on_cancle_btn_is_pressed():
+	print("test")
+
 	

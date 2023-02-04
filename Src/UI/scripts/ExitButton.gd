@@ -33,3 +33,5 @@ func alert(text: String, title: String='Message') -> void:
 	
 func _on_cancle_btn_is_pressed():
 	print("test")
+
+	

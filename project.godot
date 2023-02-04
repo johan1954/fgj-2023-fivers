@@ -19,12 +19,11 @@ config/icon="res://GFX Assets/icon.png"
 
 AssetsPreload="*res://Src/AssetsPreload.gd"
 Map="*res://Src/Map/Map.gd"
-GameEngine="*res://GameEngine.gd"
+GameEngine="*res://Src/GameEngine.gd"
 
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 run/main_scene="res://kohtaus.tscn"
 
 [global]

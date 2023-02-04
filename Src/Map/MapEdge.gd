@@ -18,7 +18,7 @@ func capture(health_delta: float):
 	
 	health += health_delta
 	
-	default_color = lerp(Color.RED, Color.GREEN, (health+100)/200)
+	default_color = lerp(Color.RED, Color.GREEN, get_balanced_weight(health))
 	text_label.text = str(round(health))
 	
 	if (health >= GameEngine.CAPTURE_THRESHOLD):
@@ -35,8 +35,8 @@ func init_text():
 		text_label.position = lerp(points[0], points[1], 0.5)
 	text_label.text="0"
 		
-func get_balanced_weight():
-	pass
+func get_balanced_weight(health):
+	return (health + GameEngine.CAPTURE_THRESHOLD) / (GameEngine.CAPTURE_THRESHOLD * 2)
 
 func intersect_with(C: Vector2, D: Vector2) -> bool:
 	var A := points[0]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c31r848ds1fwu"
-path="res://.godot/imported/icon.png-e205c9df09b769c69066c0c1076d178d.ctex"
+uid="uid://cy7hidwd8kj6x"
+path="res://.godot/imported/sieni evil.png-00d62e03376fa0f467a0384b99566ecd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX Assets/icon.png"
-dest_files=["res://.godot/imported/icon.png-e205c9df09b769c69066c0c1076d178d.ctex"]
+source_file="res://GFX Assets/sieni evil.png"
+dest_files=["res://.godot/imported/sieni evil.png-00d62e03376fa0f467a0384b99566ecd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c31r848ds1fwu"
-path="res://.godot/imported/icon.png-e205c9df09b769c69066c0c1076d178d.ctex"
+uid="uid://boud4pe55l4pi"
+path="res://.godot/imported/sieni.png-a95485021563d8e29596e5352cbae254.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX Assets/icon.png"
-dest_files=["res://.godot/imported/icon.png-e205c9df09b769c69066c0c1076d178d.ctex"]
+source_file="res://GFX Assets/sieni.png"
+dest_files=["res://.godot/imported/sieni.png-a95485021563d8e29596e5352cbae254.ctex"]
 
 [params]
 

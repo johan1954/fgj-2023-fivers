@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c31r848ds1fwu"
-path="res://.godot/imported/icon.png-e205c9df09b769c69066c0c1076d178d.ctex"
+uid="uid://dta7l3hurij48"
+path="res://.godot/imported/pallo.png-c562324a4313f12aa23ed045d15167b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX Assets/icon.png"
-dest_files=["res://.godot/imported/icon.png-e205c9df09b769c69066c0c1076d178d.ctex"]
+source_file="res://GFX Assets/pallo.png"
+dest_files=["res://.godot/imported/pallo.png-c562324a4313f12aa23ed045d15167b4.ctex"]
 
 [params]
 

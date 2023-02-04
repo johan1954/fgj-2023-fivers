@@ -14,8 +14,11 @@ var base_node_health_change_speed = 0
 var cardpack_array = []
 var hand_cards_array = []
 # RNG class
-
 var rng = RandomNumberGenerator.new()
+
+# Nodes
+var closest_node: MapNode
+var node: MapNode
 
 # Class methods
 func change_resource_points(points):

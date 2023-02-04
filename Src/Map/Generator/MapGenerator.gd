@@ -11,17 +11,17 @@ const MAX_EDGES = 5
 const MAX_NODE_LOOKUP = 10
 
 var rng = RandomNumberGenerator.new()
+var map_state = MapState.new()
 func _ready():
 	generate_map()
 	
 func generate_map():
-	var map_state = MapState.new()
 	rng.randomize()
-	generate_nodes(map_state)
-	generate_edges(map_state)
+	generate_nodes()
+	generate_edges()
 	spawn_players()
 		
-func generate_nodes(map_state):
+func generate_nodes():
 	var generated_nodes = 0
 	while (generated_nodes < DESIRED_NODE_COUNT):
 		var new_x = rng.randf_range(MIN_X, MAX_X)
@@ -32,13 +32,17 @@ func generate_nodes(map_state):
 		if shortest_distance < MIN_DISTANCE:
 			continue
 			
-		var new_node = AssetsPreload.MAP_NODE_NODE.instantiate()
-		Map.add_child(new_node)
-		new_node.position = new_location
-		map_state.nodes.append(new_node)
+		spawn_node(new_location)	
 		generated_nodes += 1
+
+func spawn_node(spawn_location: Vector2):
+	var new_node = AssetsPreload.MAP_NODE_NODE.instantiate()
+	Map.add_child(new_node)
+	new_node.position = spawn_location
+	map_state.nodes.append(new_node)
+	return new_node
 		
-func generate_edges(map_state: MapState):
+func generate_edges():
 	var nodes = map_state.nodes
 	
 	for node in nodes:
@@ -54,7 +58,15 @@ func generate_edges(map_state: MapState):
 func spawn_players():
 	var player = AssetsPreload.PLAYER_SHROOM_NODE.instantiate()
 	add_child(player)
-	player.position = Vector2(MIN_X - 100, 0)
+	init_player(player, Vector2(MIN_X - 100, 0), Enums.Owner.PLAYER)
+	
 	var enemy = AssetsPreload.ENEMY_SHROOM_NODE.instantiate()
 	add_child(enemy)
-	enemy.position = Vector2(MAX_X + 100, 0)
+	init_player(enemy, Vector2(MAX_X + 100, 0), Enums.Owner.ENEMY)
+	
+func init_player(shroom_object, spawn_position: Vector2, owner):
+	shroom_object.position = spawn_position
+	shroom_object.closest_node = map_state.find_closest_node(shroom_object.position)[0]
+	shroom_object.node = spawn_node(shroom_object.position)
+	shroom_object.node.add_edge(shroom_object.closest_node)
+	shroom_object.node.belongs_to = owner

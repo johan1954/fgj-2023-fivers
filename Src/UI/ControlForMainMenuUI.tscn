@@ -7,34 +7,34 @@
 [node name="ControlForUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1023.0
-margin_bottom = 595.0
+offset_right = 1023.0
+offset_bottom = 595.0
 
 [node name="menuNewGame" parent="." instance=ExtResource( 1 )]
-margin_left = 449.0
-margin_top = 170.0
-margin_right = 613.0
-margin_bottom = 207.0
-focus_neighbour_top = NodePath("../menuExit")
-focus_neighbour_bottom = NodePath("../menuSettings")
+offset_left = 449.0
+offset_top = 170.0
+offset_right = 613.0
+offset_bottom = 207.0
+focus_neighbor_top = NodePath("../menuExit")
+focus_neighbor_bottom = NodePath("../menuSettings")
 text = "New Game"
 script = ExtResource( 3 )
 
 [node name="menuSettings" parent="." instance=ExtResource( 1 )]
-margin_left = 449.0
-margin_top = 242.0
-margin_right = 613.0
-margin_bottom = 279.0
-focus_neighbour_top = NodePath("../menuNewGame")
-focus_neighbour_bottom = NodePath("../menuExit")
+offset_left = 449.0
+offset_top = 242.0
+offset_right = 613.0
+offset_bottom = 279.0
+focus_neighbor_top = NodePath("../menuNewGame")
+focus_neighbor_bottom = NodePath("../menuExit")
 text = "Settings"
 
 [node name="menuExit" parent="." instance=ExtResource( 1 )]
-margin_left = 449.0
-margin_top = 314.0
-margin_right = 613.0
-margin_bottom = 351.0
-focus_neighbour_top = NodePath("../menuSettings")
-focus_neighbour_bottom = NodePath("../menuNewGame")
+offset_left = 449.0
+offset_top = 314.0
+offset_right = 613.0
+offset_bottom = 351.0
+focus_neighbor_top = NodePath("../menuSettings")
+focus_neighbor_bottom = NodePath("../menuNewGame")
 text = "Exit"
 script = ExtResource( 2 )

@@ -6,40 +6,13 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[ {
-"base": "CardBase",
-"class": "CardAttackNode",
-"language": "GDScript",
-"path": "res://Src/Classes/CardAttackNode.gd"
-}, {
-"base": "Node",
-"class": "CardBase",
-"language": "GDScript",
-"path": "res://Src/Classes/CardBase.gd"
-}, {
-"base": "CardBase",
-"class": "CardSpeedBoost",
-"language": "GDScript",
-"path": "res://Src/Classes/CardSpeedBoost.gd"
-}, {
-"base": "Node",
-"class": "Shroom_base",
-"language": "GDScript",
-"path": "res://Src/Classes/ShroomBase.gd"
-} ]
-_global_script_class_icons={
-"CardAttackNode": "",
-"CardBase": "",
-"CardSpeedBoost": "",
-"Shroom_base": ""
-}
+config_version=5
 
 [application]
 
 config/name="Fivers"
 run/main_scene="res://MainMenu.tscn"
+config/features=PackedStringArray("4.0")
 config/icon="res://GFX Assets/icon.png"
 
 [display]

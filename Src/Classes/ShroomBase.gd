@@ -24,7 +24,7 @@ func add_cards(cards):
 	self.cardpack_array.append(cards)
 	
 func remove_card_by_index(index):
-	self.cardpack_array.remove(index)
+	self.cardpack_array.remove_at(index)
 	
 func draft_cards():
 	var selected = []

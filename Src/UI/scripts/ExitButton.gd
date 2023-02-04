@@ -8,11 +8,11 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect("pressed", self, "_button_pressed")
+	connect("pressed",Callable(self,"_button_pressed"))
 
 func _button_pressed():
-	alert("T: Ohjelmoinnin perusteet", "Kiitos ohjelman käytöstä!")
-	yield(get_tree().create_timer(2.0), "timeout")
+	alert( "Kiitos ohjelman käytöstä!", "Ohjelmoinnin perusteet")
+	await get_tree().create_timer(2.0).timeout
 	print("Kiitos ohjelman käytöstä!")
 	get_tree().quit()
 
@@ -23,7 +23,9 @@ func _button_pressed():
 func alert(text: String, title: String='Message') -> void:
 	var dialog = AcceptDialog.new()
 	dialog.dialog_text = text
-	dialog.window_title = title
-	dialog.connect('modal_closed', dialog, 'queue_free')
+	dialog.title = title
+	dialog.ok_button_text = "Ole hyvä!"
+	dialog.connect('modal_closed',Callable(dialog,'queue_free'))
 	add_child(dialog)
 	dialog.popup_centered()
+	

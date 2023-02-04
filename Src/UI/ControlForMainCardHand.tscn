@@ -12,16 +12,10 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 296.0
-offset_top = 128.0
-offset_right = 932.0
-offset_bottom = 344.0
-text = "DOWAJDWAJDPWAJDWAJDPWJDÖWJDPAWPODWJPDWHPWHDPWHDWPIDWPHWDI"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 32.0
+offset_top = 512.0
+offset_right = 1120.0
+offset_bottom = 576.0
 script = ExtResource("1_2onqn")

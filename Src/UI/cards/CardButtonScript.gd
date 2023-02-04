@@ -1,10 +1,11 @@
 extends Node
 
 var message: String
+var parent
 
 func console_print():
 	print(message)
 
 func _pressed():
 	print(message)
-	remove_child()
+	#get_parent().remove_child(self)

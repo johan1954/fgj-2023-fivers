@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://c31r848ds1fwu" path="res://GFX Assets/icon.png" id="1_x6lfr"]
 
 [node name="TextureButton" type="TextureButton"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 64.0
+offset_bottom = 64.0
 texture_normal = ExtResource("1_x6lfr")
+ignore_texture_size = true
+stretch_mode = 4
 script = ExtResource("1_bcdm3")

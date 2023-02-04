@@ -4,7 +4,7 @@ var nodes = []
 
 func find_closest_node(position: Vector2):
 	if nodes.size() == 0:
-		return INF
+		return [null,INF]
 	
 	var closest_distance = INF
 	var closest_node = nodes[0]
@@ -15,7 +15,7 @@ func find_closest_node(position: Vector2):
 			closest_distance = distance
 			closest_node = node_candidate
 			
-	return closest_distance
+	return [closest_node,closest_distance]
 	
 func get_nodes_in_distance_order(position: Vector2):
 	var distances_and_nodes = []

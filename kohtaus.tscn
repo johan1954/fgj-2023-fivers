@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cir4xbk08mf1j" path="res://Src/UI/ControlForMainCardHand.tscn" id="2_u0icx"]
 [ext_resource type="Script" path="res://Src/AssetsPreload.gd" id="4"]
 [ext_resource type="Script" path="res://Src/Map/Map.gd" id="4_ltrcl"]
+[ext_resource type="AudioStream" uid="uid://b74vw78uees6s" path="res://Audio/FGJ23_Shroom_rts_main_theme.wav" id="4_resnk"]
 
 [node name="Scene" type="Node2D"]
 
@@ -36,3 +37,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 drag_horizontal_offset = 0.63
 script = ExtResource("2_hmu0u")
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_resnk")
+autoplay = true
+bus = &"Music"

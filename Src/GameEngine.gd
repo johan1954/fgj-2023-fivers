@@ -4,6 +4,7 @@ extends Node
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
+			GlobalAudio.playSoundEffect()
 			var map = get_node("/root/Map")
 			for child in map.get_children():
 				child.queue_free()

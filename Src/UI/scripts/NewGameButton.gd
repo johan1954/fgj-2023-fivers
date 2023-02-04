@@ -16,6 +16,7 @@ func _on_Button_mouse_entered():
 
 func _on_Button_Pressed():
 	if(reference_path != ""):
+		GlobalAudio.playSoundEffect()
 		get_tree().change_scene_to_file(reference_path)
 		GameEngine.start_game()
 	else:

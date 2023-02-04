@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://crqubft5swxrh"]
+[gd_scene load_steps=5 format=3 uid="uid://dlptxyf8b6n87"]
 
 [ext_resource type="PackedScene" path="res://Src/UI/ControlForMainMenuUI.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://cgriras0uwarm" path="res://GFX Assets/MainBG4K.jpg" id="2"]
+[ext_resource type="AudioStream" uid="uid://casgcafvhqmtx" path="res://Audio/game_theme_1_1.wav" id="3_dmwrm"]
+[ext_resource type="AudioStream" uid="uid://cfl6ti6ro1a0c" path="res://Audio/FGJ23_Shroom_rts_transition.wav" id="4_i4yea"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-24, -8)
@@ -70,5 +72,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(4, 4)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dmwrm")
+autoplay = true
+bus = &"Music"
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_i4yea")
+bus = &"SFX"
 
 [editable path="ControlForMainMenuUI"]

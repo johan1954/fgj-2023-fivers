@@ -39,8 +39,8 @@ func _input(event: InputEvent):
 		position = new_position
 
 	if event is InputEventKey and event.pressed and event.physical_keycode == KEY_F11:
+		fullscreen = !fullscreen
 		if fullscreen:
 			DisplayServer.window_set_mode(Window.MODE_FULLSCREEN)
 		else:
 			DisplayServer.window_set_mode(Window.MODE_WINDOWED)
-		fullscreen = !fullscreen

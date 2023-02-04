@@ -24,7 +24,7 @@ func get_nodes_in_distance_order(position: Vector2):
 		var distance = node.get_distance(position)
 		distances_and_nodes.append([distance, node])
 		
-	distances_and_nodes.sort_custom(self, "distance_comparison")
+	distances_and_nodes.sort_custom(Callable(self,"distance_comparison"))
 	
 	var nodes2 = []
 	for node_and_distance in distances_and_nodes:

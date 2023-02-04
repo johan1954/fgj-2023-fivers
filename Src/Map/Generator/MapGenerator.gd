@@ -11,8 +11,7 @@ const MAX_EDGES = 5
 const MAX_NODE_LOOKUP = 10
 
 var rng = RandomNumberGenerator.new()
-var map_node = preload("res://Src/Objects/MapNode.tscn")
-var map_edge = preload("res://Src/Objects/MapEdge.tscn")
+
 func _ready():
 	generate_map()
 	
@@ -32,7 +31,8 @@ func generate_nodes(map_state):
 		var shortest_distance = map_state.find_closest_node(new_location)
 		if shortest_distance < MIN_DISTANCE:
 			continue
-		var new_node = map_node.instance()
+			
+		var new_node = AssetsPreload.MAP_NODE_NODE.instantiate()
 		add_child(new_node)
 		new_node.position = new_location
 		map_state.nodes.append(new_node)
@@ -47,20 +47,6 @@ func generate_edges(map_state: MapState):
 		
 		var closest_nodes = map_state.get_nodes_in_distance_order(node.position)
 		while edges_left > 0:
-			var node_to_be_added = closest_nodes[rng.randi_range(0,MAX_NODE_LOOKUP)]
-			if add_edge(node, node_to_be_added):
+			var node_to_be_added = closest_nodes[rng.randi_range(0, MAX_NODE_LOOKUP)]
+			if node.add_edge(node_to_be_added):
 				edges_left -= 1
-
-func add_edge(target_node: MapNode, other_node: MapNode):
-	if target_node.has_edge(other_node):
-		return false
-	
-	var edge: MapEdge = map_edge.instance()
-	add_child(edge)
-	edge.map_node_1 = target_node
-	edge.map_node_2 = other_node
-	edge.points = [target_node.position, other_node.position]
-	target_node.edges.append(edge)
-	other_node.edges.append(edge)
-	
-	return true

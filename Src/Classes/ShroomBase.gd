@@ -33,10 +33,10 @@ func add_cards_to_pack(cards):
 	self.cardpack_array.append(cards)
 	
 func remove_card_from_pack(index):
-	self.cardpack_array.remove(index)
+	self.cardpack_array.remove_at(index)
 
 func remove_card_from_hand(index):
-	self.hand_cards_array.remove(index)
+	self.hand_cards_array.remove_at(index)
 	
 func draft_cards():
 	var selected = []

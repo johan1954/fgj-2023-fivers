@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://crqubft5swxrh"]
+
+[ext_resource type="PackedScene" path="res://Src/UI/ControlForMainMenuUI.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://cgriras0uwarm" path="res://GFX Assets/MainBG4K.jpg" id="2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -40.0
+offset_top = -16.0
+offset_right = 1096.0
+offset_bottom = 816.0
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ControlForMainMenuUI" parent="." instance=ExtResource("1")]
+layout_mode = 3
+anchors_preset = 15
+offset_top = 4.0
+offset_right = 0.0
+offset_bottom = 599.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="menuNewGame" parent="ControlForMainMenuUI" index="0"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 300.0
+offset_right = 612.0
+offset_bottom = 337.0
+
+[node name="menuSettings" parent="ControlForMainMenuUI" index="1"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 364.0
+offset_right = 612.0
+offset_bottom = 401.0
+
+[node name="menuExit" parent="ControlForMainMenuUI" index="2"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 428.0
+offset_right = 612.0
+offset_bottom = 465.0
+
+[editable path="ControlForMainMenuUI"]

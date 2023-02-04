@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="Fivers"
-run/main_scene="res://MainMenu.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://GFX Assets/icon.png"
 
@@ -19,6 +18,16 @@ config/icon="res://GFX Assets/icon.png"
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+run/main_scene="res://kohtaus.tscn"
+
+[autoload]
+
+AssetsPreload="*res://Src/AssetsPreload.gd"
+Map="*res://Src/Map/Map.gd"
+
+[global]
+
+autoload=false
 
 [gui]
 

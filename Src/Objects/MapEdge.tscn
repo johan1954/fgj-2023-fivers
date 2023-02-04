@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Src/Map/MapEdge.gd" type="Script" id=1]
+
+[node name="Line2D" type="Line2D"]
+points = PackedVector2Array( 100, 0, 258, -3 )
+width = 2.0
+default_color = Color( 0.698039, 0.698039, 0.698039, 1 )
+script = ExtResource( 1 )

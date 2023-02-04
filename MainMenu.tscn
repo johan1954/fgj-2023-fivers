@@ -4,46 +4,71 @@
 [ext_resource type="Texture2D" uid="uid://cgriras0uwarm" path="res://GFX Assets/MainBG4K.jpg" id="2"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(-24, -8)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -40.0
-offset_top = -16.0
-offset_right = 1096.0
-offset_bottom = 816.0
+offset_left = -840.0
+offset_top = -328.0
+offset_right = 848.0
+offset_bottom = 800.0
 texture = ExtResource("2")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="ControlForMainMenuUI" parent="." instance=ExtResource("1")]
+custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 15
-offset_top = 4.0
-offset_right = 0.0
-offset_bottom = 599.0
+offset_left = -648.0
+offset_top = -376.0
+offset_right = 632.0
+offset_bottom = 344.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="menuNewGame" parent="ControlForMainMenuUI" index="0"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1125
+anchor_top = 0.00555556
+anchor_right = 0.1125
+anchor_bottom = 0.00555556
 offset_left = 448.0
 offset_top = 300.0
 offset_right = 612.0
 offset_bottom = 337.0
+metadata/_edit_use_anchors_ = true
 
 [node name="menuSettings" parent="ControlForMainMenuUI" index="1"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1125
+anchor_top = 0.0166667
+anchor_right = 0.1125
+anchor_bottom = 0.0166667
 offset_left = 448.0
 offset_top = 364.0
 offset_right = 612.0
 offset_bottom = 401.0
+metadata/_edit_use_anchors_ = true
 
 [node name="menuExit" parent="ControlForMainMenuUI" index="2"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1125
+anchor_top = 0.0166667
+anchor_right = 0.1125
+anchor_bottom = 0.0166667
 offset_left = 448.0
 offset_top = 428.0
 offset_right = 612.0
 offset_bottom = 465.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(4, 4)
 
 [editable path="ControlForMainMenuUI"]

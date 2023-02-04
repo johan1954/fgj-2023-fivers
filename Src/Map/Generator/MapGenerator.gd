@@ -3,11 +3,11 @@ extends Node
 class_name MapGenerator
 
 const DESIRED_NODE_COUNT = 100
-const MIN_X = -300
-const MAX_X = 300
-const MIN_Y = -300
-const MAX_Y = 300
-const MIN_DISTANCE = 50
+const MIN_X = -356
+const MAX_X = 356
+const MIN_Y = -200
+const MAX_Y = 200
+const MIN_DISTANCE = 40
 const MIN_EDGES = 3
 const MAX_EDGES = 5
 const MAX_NODE_LOOKUP = 10

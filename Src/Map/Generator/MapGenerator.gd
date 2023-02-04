@@ -20,13 +20,12 @@ func generate_map() -> MapState:
 	
 	generate_nodes(map_state)
 	generate_edges(map_state)
-	spawn_players()
+	spawn_players(map_state)
 	
 	return map_state
 		
 func generate_nodes(map_state: MapState):
-	var generated_nodes = 0
-	while (generated_nodes < DESIRED_NODE_COUNT):
+	while (map_state.nodes.size() < DESIRED_NODE_COUNT):
 		var new_x = rng.randf_range(MIN_X, MAX_X)
 		var new_y = rng.randf_range(MIN_Y, MAX_Y)
 		var new_location = Vector2(new_x, new_y)
@@ -35,17 +34,9 @@ func generate_nodes(map_state: MapState):
 		if closest_node != null && closest_node.get_distance(new_location) < MIN_DISTANCE:
 			continue
 			
-		spawn_node(new_location)	
-		generated_nodes += 1
-
-func spawn_node(spawn_location: Vector2):
-	var new_node = AssetsPreload.MAP_NODE_NODE.instantiate()
-	Map.add_child(new_node)
-	new_node.position = spawn_location
-	map_state.nodes.append(new_node)
-	return new_node
+		var new_node = MapNode.spawn_node(new_location, map_state)
 		
-func generate_edges():
+func generate_edges(map_state: MapState):
 	var nodes = map_state.nodes
 	
 	for node in nodes:
@@ -64,18 +55,18 @@ func generate_edges():
 			if node.add_edge(node_candidate):
 				edgest_to_be_placed -= 1
 
-func spawn_players():
+func spawn_players(map_state: MapState):
 	var player = AssetsPreload.PLAYER_SHROOM_NODE.instantiate()
 	add_child(player)
-	init_player(player, Vector2(MIN_X - 100, 0), Enums.Owner.PLAYER)
+	init_player(map_state, player, Vector2(MIN_X - 100, 0), Enums.Owner.PLAYER)
 	
 	var enemy = AssetsPreload.ENEMY_SHROOM_NODE.instantiate()
 	add_child(enemy)
-	init_player(enemy, Vector2(MAX_X + 100, 0), Enums.Owner.ENEMY)
+	init_player(map_state, enemy, Vector2(MAX_X + 100, 0), Enums.Owner.ENEMY)
 	
-func init_player(shroom_object, spawn_position: Vector2, owner):
+func init_player(map_state: MapState, shroom_object, spawn_position: Vector2, owner):
 	shroom_object.position = spawn_position
-	shroom_object.closest_node = map_state.find_closest_node(shroom_object.position)[0]
-	shroom_object.node = spawn_node(shroom_object.position)
+	shroom_object.closest_node = map_state.find_closest_node(shroom_object.position)
+	shroom_object.node = MapNode.spawn_node(shroom_object.position, map_state)
 	shroom_object.node.add_edge(shroom_object.closest_node)
 	shroom_object.node.belongs_to = owner

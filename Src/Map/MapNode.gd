@@ -9,6 +9,16 @@ var rng = RandomNumberGenerator.new()
 
 var belongs_to := Enums.Owner.NONE
 
+func _init():
+	rng.randomize()
+	
+static func spawn_node(spawn_location: Vector2, map_state: MapState) -> MapNode:
+	var new_node = AssetsPreload.MAP_NODE_NODE.instantiate()
+	Map.add_child(new_node)
+	new_node.position = spawn_location
+	map_state.nodes.append(new_node)
+	return new_node
+
 func get_distance(other_position: Vector2) -> float:
 	return position.distance_to(other_position)
 
@@ -31,11 +41,6 @@ func has_edge(other_node: MapNode) -> bool:
 		if edge.get_other_node(self) == other_node:
 			return true
 	return false
-	
-
-	
-func _init():
-	rng.randomize()
 
 func _process(delta):
 	if belongs_to == Enums.Owner.PLAYER:

@@ -20,14 +20,6 @@ func generate_map():
 	generate_nodes(map_state)
 	generate_edges(map_state)
 	spawn_players()
-	
-func spawn_players():
-	var player = player_shroom.instance()
-	add_child(player)
-	player.position = Vector2(MIN_X - 100, 0)
-	var enemy = enemy_shroom.instance()
-	add_child(enemy)
-	enemy.position = Vector2(MAX_X + 100, 0)
 		
 func generate_nodes(map_state):
 	var generated_nodes = 0
@@ -41,7 +33,7 @@ func generate_nodes(map_state):
 			continue
 			
 		var new_node = AssetsPreload.MAP_NODE_NODE.instantiate()
-		add_child(new_node)
+		Map.add_child(new_node)
 		new_node.position = new_location
 		map_state.nodes.append(new_node)
 		generated_nodes += 1
@@ -58,3 +50,11 @@ func generate_edges(map_state: MapState):
 			var node_to_be_added = closest_nodes[rng.randi_range(0, MAX_NODE_LOOKUP)]
 			if node.add_edge(node_to_be_added):
 				edges_left -= 1
+
+func spawn_players():
+	var player = AssetsPreload.PLAYER_SHROOM_NODE.instantiate()
+	add_child(player)
+	player.position = Vector2(MIN_X - 100, 0)
+	var enemy = AssetsPreload.ENEMY_SHROOM_NODE.instantiate()
+	add_child(enemy)
+	enemy.position = Vector2(MAX_X + 100, 0)

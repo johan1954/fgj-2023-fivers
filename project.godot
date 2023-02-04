@@ -18,6 +18,7 @@ config/icon="res://GFX Assets/icon.png"
 [autoload]
 
 AssetsPreload="*res://Src/AssetsPreload.gd"
+Map="*res://Src/Map/Map.gd"
 
 [global]
 

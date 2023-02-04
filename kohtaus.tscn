@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ce335juw45m6x"]
+[gd_scene load_steps=7 format=3 uid="uid://ce335juw45m6x"]
 
 [ext_resource type="Script" path="res://Src/CameraControl.gd" id="2_hmu0u"]
 [ext_resource type="PackedScene" uid="uid://cir4xbk08mf1j" path="res://Src/UI/ControlForMainCardHand.tscn" id="2_u0icx"]
@@ -33,18 +33,6 @@ offset_bottom = -324.0
 size_flags_vertical = 1
 mouse_filter = 2
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-position_smoothing_speed = 20.0
-drag_horizontal_offset = 0.63
-script = ExtResource("2_hmu0u")
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_resnk")
-autoplay = true
-bus = &"Music"
-
-[node name="UI" type="CanvasLayer" parent="."]
-
 [node name="CardContainer" type="HBoxContainer" parent="UI"]
 anchors_preset = 2
 anchor_top = 1.0
@@ -53,3 +41,16 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 script = ExtResource("5_a4bh5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+drag_horizontal_offset = 0.63
+script = ExtResource("2_hmu0u")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_resnk")
+autoplay = true
+bus = &"Music"
+
+[node name="UI" type="CanvasLayer" parent="."]

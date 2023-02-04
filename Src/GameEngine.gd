@@ -1,5 +1,8 @@
 extends Node
 
+func _ready():
+	AudioServer.playback_speed_scale = 2.0
+
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
@@ -22,7 +25,12 @@ var enemy_growth_speed = -5
 var player_damage_output = 0
 var enemy_damage_output = 5
 
+var _main_volume_bus := AudioServer.get_bus_index("Master")
+
+
+
 func start_game():
+	
 	map_generator = MapGenerator.new()
 	map_generator.generate_map()
 

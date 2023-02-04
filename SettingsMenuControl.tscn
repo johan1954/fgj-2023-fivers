@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvhoym4wo74tk"]
+
+[ext_resource type="PackedScene" uid="uid://cq3u3qnq0nf16" path="res://Src/UI/buttons/MenuButton.tscn" id="1_ye5bf"]
+[ext_resource type="Script" path="res://Src/UI/scripts/goBackToMainMenu.gd" id="2_p243h"]
+[ext_resource type="StyleBox" path="res://Src/UI/theme/normal_styleboxflat.tres" id="3_gm8lp"]
+[ext_resource type="Script" path="res://Src/UI/scripts/VolumeSlider.gd" id="4_oxy4a"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 599.0
+offset_bottom = 379.0
+
+[node name="BackButton" parent="." instance=ExtResource("1_ye5bf")]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 23.0
+offset_right = 202.0
+offset_bottom = 60.0
+text = "Back"
+script = ExtResource("2_p243h")
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 83.0
+offset_right = 200.0
+offset_bottom = 149.0
+theme_override_styles/slider = ExtResource("3_gm8lp")
+min_value = -50.0
+max_value = 25.0
+step = 1.3
+value = -0.6
+script = ExtResource("4_oxy4a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 72.0
+offset_right = 201.0
+offset_bottom = 98.0
+text = "Master volume"
+horizontal_alignment = 1

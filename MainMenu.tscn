@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlptxyf8b6n87"]
+[gd_scene load_steps=6 format=3 uid="uid://dlptxyf8b6n87"]
 
-[ext_resource type="PackedScene" uid="uid://drxk1g7gtoer0" path="res://Src/UI/ControlForMainMenuUI.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://chgser4ikhx1t" path="res://Src/UI/ControlForMainMenuUI.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://cgriras0uwarm" path="res://GFX Assets/MainBG4K.jpg" id="2"]
 [ext_resource type="AudioStream" uid="uid://casgcafvhqmtx" path="res://Audio/game_theme_1_1.wav" id="3_dmwrm"]
 [ext_resource type="AudioStream" uid="uid://cfl6ti6ro1a0c" path="res://Audio/FGJ23_Shroom_rts_transition.wav" id="4_i4yea"]
+[ext_resource type="PackedScene" uid="uid://cvhoym4wo74tk" path="res://SettingsMenuControl.tscn" id="5_6dktq"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-24, -8)
@@ -54,5 +55,11 @@ bus = &"Music"
 [node name="SoundEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_i4yea")
 bus = &"SFX"
+
+[node name="ControlForSettingsMenu" parent="." instance=ExtResource("5_6dktq")]
+offset_left = 409.0
+offset_top = 281.0
+offset_right = 779.0
+offset_bottom = 567.0
 
 [editable path="ControlForMainMenuUI"]

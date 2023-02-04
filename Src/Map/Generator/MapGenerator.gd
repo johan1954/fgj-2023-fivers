@@ -81,3 +81,4 @@ func init_player(map_state: MapState, shroom_object, spawn_position: Vector2, pl
 	shroom_object.node = MapNode.spawn_node(shroom_object.position, map_state)
 	shroom_object.node.add_edge(shroom_object.closest_node)
 	shroom_object.node.belongs_to = player_owner
+	shroom_object.node.capture_all_edges(player_owner)

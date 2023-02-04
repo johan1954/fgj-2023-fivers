@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce335juw45m6x"]
+[gd_scene load_steps=4 format=3 uid="uid://ce335juw45m6x"]
 
 [ext_resource type="Script" path="res://Src/CameraControl.gd" id="2_hmu0u"]
 [ext_resource type="Script" path="res://Src/AssetsPreload.gd" id="4"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Fivers"
-run/main_scene="res://kohtaus.tscn"
+run/main_scene="res://MainMenu.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://GFX Assets/icon.png"
 
@@ -24,6 +24,7 @@ Map="*res://Src/Map/Map.gd"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+run/main_scene="res://kohtaus.tscn"
 
 [global]
 

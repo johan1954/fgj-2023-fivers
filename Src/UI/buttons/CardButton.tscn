@@ -6,3 +6,5 @@
 [node name="CardButton" type="TextureButton"]
 texture_normal = ExtResource("1_4hvj2")
 script = ExtResource("2_t4ft6")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

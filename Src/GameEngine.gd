@@ -10,10 +10,10 @@ func _unhandled_input(event):
 			var map = get_node("/root/Map")
 			for child in map.get_children():
 				child.queue_free()
-				
-			get_tree().change_scene_to_file("res://MainMenu.tscn")
-			print(get_tree().get_current_scene()) 
-			#get_tree().change_scene_to_file("res://MainMenu.tscn")
+			
+			print("Kiitos ohjelman käytöstä!")
+			get_tree().quit()
+#			get_tree().change_scene_to_file("res://MainMenu.tscn")
 
 var map_generator : MapGenerator
 var card_manager : CardManager

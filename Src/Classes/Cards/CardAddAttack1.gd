@@ -1,17 +1,22 @@
 extends CardAttackNode
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+class_name CardAddAttack1
 
-func get
-
+var DEACTIVATION_TIME = 5
+var timer = 0
+var activated = false
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func card_effect():
+	GameEngine.enemy_damage_output += 10
+	activated = true
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if activated == false: return
+	
+	timer += delta
+	if (timer >= DEACTIVATION_TIME):
+		GameEngine.enemy_damage_output -= 10
+		timer = 0
+		activated = false
+		card_manager.reset_card(self)

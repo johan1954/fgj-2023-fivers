@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://diwcmkc4edr0l"]
+[gd_scene load_steps=3 format=3 uid="uid://cc2p0j2lkepgr"]
 
 [ext_resource type="Texture2D" uid="uid://c31r848ds1fwu" path="res://GFX Assets/icon.png" id="1_4hvj2"]
 [ext_resource type="Script" path="res://Src/UI/buttons/CardButton.gd" id="2_t4ft6"]
@@ -6,3 +6,5 @@
 [node name="CardButton" type="TextureButton"]
 texture_normal = ExtResource("1_4hvj2")
 script = ExtResource("2_t4ft6")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ce335juw45m6x"]
+[gd_scene load_steps=7 format=3 uid="uid://ce335juw45m6x"]
 
 [ext_resource type="Script" path="res://Src/CameraControl.gd" id="2_hmu0u"]
+[ext_resource type="Script" path="res://Src/Classes/CardManager.gd" id="3_ibqtq"]
 [ext_resource type="Script" path="res://Src/AssetsPreload.gd" id="4"]
 [ext_resource type="Script" path="res://Src/Map/Map.gd" id="4_ltrcl"]
 [ext_resource type="AudioStream" uid="uid://b74vw78uees6s" path="res://Audio/FGJ23_Shroom_rts_main_theme.wav" id="4_resnk"]
@@ -18,6 +19,9 @@ script = ExtResource("2_hmu0u")
 
 [node name="AssetsPreload" type="Node" parent="GlobalScripts"]
 script = ExtResource("4")
+
+[node name="CardManager" type="Node" parent="GlobalScripts"]
+script = ExtResource("3_ibqtq")
 
 [node name="Map" type="Node" parent="."]
 script = ExtResource("4_ltrcl")

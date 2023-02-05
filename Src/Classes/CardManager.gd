@@ -14,8 +14,10 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	card_container = get_node("/root/Scene/UI/Control/CardContainer")
 	var card_add_attack = CardAddAttack1.new()
+	var card_reduce_attack = CardReduceAttack1.new()
 	card_add_attack.card_manager = self
 	base_cardpack.append(card_add_attack)
+	base_cardpack.append(card_reduce_attack)
 	pass # Replace with function body.
 
 func create_cards_from_pack(amount : int):

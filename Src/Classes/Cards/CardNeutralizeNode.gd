@@ -1,4 +1,4 @@
-extends CardAttackNode
+extends CardBase
 
 class_name CardNeutralizeNode
 
@@ -8,3 +8,7 @@ func card_effect(node: MapNode):
 
 func _process(delta):
 	pass
+
+func _init():
+	title = "Neutralize"
+	descrition = "Destory fungus\nby clicking node"

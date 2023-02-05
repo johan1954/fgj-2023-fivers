@@ -18,8 +18,11 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	card_container = get_node("/root/Scene/UI/Control/CardContainer")
 	base_cardpack.append(CardAddAttack1.new())
-	#base_cardpack.append(CardReduceAttack1.new())
-	#base_cardpack.append(CardNeutralizeNode.new())
+	base_cardpack.append(CardAddAttack1.new())
+	base_cardpack.append(CardReduceAttack1.new())
+	base_cardpack.append(CardReduceAttack1.new())
+	base_cardpack.append(CardNeutralizeNode.new())
+	base_cardpack.append(CardNeutralizeNode.new())
 	pass # Replace with function body.
 
 func create_cards_from_pack(amount : int):
@@ -94,6 +97,7 @@ func check_victory_lose_condition():
 		dialog.visible = true
 		get_tree().get_current_scene().add_child(dialog,true)
 		game_stopped = true
+		get_tree().paused = true
 	
 	if number_of_player_nodes == 0:
 		var dialog = AcceptDialog.new()
@@ -103,3 +107,4 @@ func check_victory_lose_condition():
 		dialog.visible = true
 		get_tree().get_current_scene().add_child(dialog,true)
 		game_stopped = true
+		get_tree().paused = true

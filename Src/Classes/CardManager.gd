@@ -17,12 +17,9 @@ var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	card_container = get_node("/root/Scene/UI/Control/CardContainer")
-	var card_add_attack = CardAddAttack1.new()
-	var card_reduce_attack = CardReduceAttack1.new()
-	var card_neutralize_node = CardNeutralizeNode.new()
-	base_cardpack.append(card_add_attack)
-	base_cardpack.append(card_reduce_attack)
-	base_cardpack.append(card_neutralize_node)
+	base_cardpack.append(CardAddAttack1.new())
+	#base_cardpack.append(CardReduceAttack1.new())
+	#base_cardpack.append(CardNeutralizeNode.new())
 	pass # Replace with function body.
 
 func create_cards_from_pack(amount : int):
@@ -35,6 +32,9 @@ func create_cards_from_pack(amount : int):
 
 func handle_button_press(card_button: CardButton, card : CardBase):
 	if card is CardAddAttack1:
+		card.card_effect()
+		card_container.remove_button(card_button)
+	elif card is CardReduceAttack1:
 		card.card_effect()
 		card_container.remove_button(card_button)
 	elif card is CardNeutralizeNode:
@@ -64,18 +64,18 @@ func _process(delta):
 		victory_condition_timer = victory_condition_timer - 3
 		check_victory_lose_condition()
 	
+	for card in active_cardpack:
+		card._process(delta)
+	
 	if base_cardpack.size() == 0:
 		timer = 0
 		return
 	
-	for card in active_cardpack:
-		card._process(delta)
-	
-	timer += delta
-	
 	if (timer >= GameEngine.DRAFT_TIMER):
 		create_cards_from_pack(3)
 		timer = timer - GameEngine.DRAFT_TIMER
+	
+	timer += delta
 
 func check_victory_lose_condition():
 	var number_of_enemy_nodes = 0

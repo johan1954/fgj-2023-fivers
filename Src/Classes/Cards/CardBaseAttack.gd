@@ -6,9 +6,6 @@ var added_attack_speed: int
 
 func get_card_effect():
 
-	
-
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

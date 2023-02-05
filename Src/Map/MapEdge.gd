@@ -44,7 +44,7 @@ func capture(control_delta: float):
 		control += control_delta
 	
 	default_color = lerp(Color.RED, Color.GREEN, get_balanced_weight(control))
-	text_label.text = str(round(control))
+	# text_label.text = str(round(control))
 
 	if control > GameEngine.CONTROL_TIME:
 		if (map_node_1.belongs_to == Enums.Owner.ENEMY):
@@ -79,6 +79,9 @@ func init_text():
 		
 func get_balanced_weight(health):
 	return (health + GameEngine.CONTROL_TIME) / (GameEngine.CONTROL_TIME * 2)
+	
+func neutralize_edge():
+	control = 0
 
 func intersect_with(C: Vector2, D: Vector2) -> bool:
 	var A := points[0]

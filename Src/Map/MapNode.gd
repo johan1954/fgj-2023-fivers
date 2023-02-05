@@ -42,7 +42,7 @@ func add_edge(other_node: MapNode) -> bool:
 	edge.map_node_1 = self
 	edge.map_node_2 = other_node
 	edge.points = [position, other_node.position]
-	edge.init_text()
+	# edge.init_text()
 	
 	edges.append(edge)
 	other_node.edges.append(edge)
@@ -82,6 +82,9 @@ func capture_all_edges(new_owner):
 			i.belongs_to = new_owner
 			i.control = 0
 		if (i.belongs_to == Enums.Owner.ENEMY):
+			if (GameEngine.player_damage_output > 0):
+				i.belongs_to = new_owner
+				i.control = 0
 			continue
 
 func _process(delta):

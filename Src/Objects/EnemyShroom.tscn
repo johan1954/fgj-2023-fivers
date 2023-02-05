@@ -1,8 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuudvqkn06d4t"]
 
 [ext_resource type="Script" path="res://Src/Classes/AggressiveShroom.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://cy7hidwd8kj6x" path="res://GFX Assets/sieni evil.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://chow28t7f7hme" path="res://GFX Assets/koppelokaapa.png" id="1_6fqrg"]
 
 [node name="EnemySieni" type="Sprite2D"]
-texture = ExtResource("2")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_6fqrg")
 script = ExtResource("1")

@@ -4,7 +4,8 @@ const CAMERA_MIN_X = -356
 const CAMERA_MAX_X = 356
 const CAMERA_MIN_Y = -200
 const CAMERA_MAX_Y = 200
-const ZOOM_SPEED = 0.20
+const ZOOM_SPEED = 0.05
+
 
 var mouse_start_pos: Vector2
 var screen_start_position: Vector2
@@ -22,9 +23,13 @@ func _input(event: InputEvent):
 			else:
 				dragging = false
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			#print("MOUSE_BUTTON_WHEEL_UP", zoom)
 			zoom += Vector2(ZOOM_SPEED, ZOOM_SPEED)
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			zoom -= Vector2(ZOOM_SPEED, ZOOM_SPEED)
+			#print("MOUSE_BUTTON_WHEEL_DOWN", zoom)
+			if zoom.x >= 0.79 or zoom.y >= 0.79:
+				zoom -= Vector2(ZOOM_SPEED, ZOOM_SPEED)
+			
 			
 	if event is InputEventMouseMotion and dragging:
 		var new_position = (mouse_start_pos - event.position) / zoom + screen_start_position

@@ -1,8 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://i0ackhq0y4y0"]
+[gd_scene load_steps=3 format=3 uid="uid://cvr1cfyv656l1"]
 
-[ext_resource type="Texture2D" uid="uid://boud4pe55l4pi" path="res://GFX Assets/sieni.png" id="1_yoqgk"]
+[ext_resource type="Texture2D" uid="uid://ckfabwkbtqqmi" path="res://GFX Assets/kantarelli.png" id="1_l1gp3"]
 [ext_resource type="Script" path="res://Src/Classes/SymbioticShroom.gd" id="2"]
 
 [node name="PlayerSieni" type="Sprite2D"]
-texture = ExtResource("1_yoqgk")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_l1gp3")
 script = ExtResource("2")

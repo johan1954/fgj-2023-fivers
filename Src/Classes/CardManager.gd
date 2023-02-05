@@ -16,8 +16,13 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	card_container = get_node("/root/Scene/UI/CardContainer")
-	base_cardpack.append(CardNeutralizeNode.new())
+	card_container = get_node("/root/Scene/UI/Control/CardContainer")
+	var card_add_attack = CardAddAttack1.new()
+	var card_reduce_attack = CardReduceAttack1.new()
+	var card_neutralize_node = CardNeutralizeNode.new()
+	base_cardpack.append(card_add_attack)
+	base_cardpack.append(card_reduce_attack)
+	base_cardpack.append(card_neutralize_node)
 	pass # Replace with function body.
 
 func create_cards_from_pack(amount : int):

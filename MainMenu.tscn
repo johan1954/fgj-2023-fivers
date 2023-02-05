@@ -10,21 +10,21 @@
 position = Vector2(-24, -8)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -257.0
-offset_top = 8.0
-offset_right = 1431.0
-offset_bottom = 1136.0
+offset_left = -242.0
+offset_top = -85.0
+offset_right = 1446.0
+offset_bottom = 1043.0
 texture = ExtResource("2")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="ControlForMainMenuUI" parent="." instance=ExtResource("1")]
-offset_top = 4.0
-offset_right = 0.0
-offset_bottom = 599.0
+offset_left = 46.0
+offset_top = 10.0
+offset_right = 46.0
+offset_bottom = 605.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
 
 [node name="menuNewGame" parent="ControlForMainMenuUI" index="0"]
 offset_left = 448.0
@@ -57,9 +57,9 @@ stream = ExtResource("4_i4yea")
 bus = &"SFX"
 
 [node name="ControlForSettingsMenu" parent="." instance=ExtResource("5_6dktq")]
-offset_left = 409.0
-offset_top = 281.0
-offset_right = 779.0
-offset_bottom = 567.0
+offset_left = 455.0
+offset_top = 287.0
+offset_right = 825.0
+offset_bottom = 573.0
 
 [editable path="ControlForMainMenuUI"]

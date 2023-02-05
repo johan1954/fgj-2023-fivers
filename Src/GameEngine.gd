@@ -1,7 +1,7 @@
 extends Node
 
-func _ready():
-	AudioServer.playback_speed_scale = 2.0
+#func _ready():
+#	AudioServer.playback_speed_scale = 2.0
 
 func _unhandled_input(event):
 	if event is InputEventKey:
@@ -26,6 +26,8 @@ var player_damage_output = 0
 var enemy_damage_output = 5
 
 var _main_volume_bus := AudioServer.get_bus_index("Master")
+var _music_volume_bus := AudioServer.get_bus_index("Music")
+var _sfx_volume_bus := AudioServer.get_bus_index("SFX")
 
 
 

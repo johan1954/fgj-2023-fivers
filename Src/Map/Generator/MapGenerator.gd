@@ -68,11 +68,11 @@ func generate_edges(map_state: MapState):
 
 func spawn_players(map_state: MapState):
 	var player = AssetsPreload.PLAYER_SHROOM_NODE.instantiate()
-	add_child(player)
+	Map.add_child(player)
 	init_player(map_state, player, Vector2(MIN_X - 100, 0), Enums.Owner.PLAYER)
 	
 	var enemy = AssetsPreload.ENEMY_SHROOM_NODE.instantiate()
-	add_child(enemy)
+	Map.add_child(enemy)
 	init_player(map_state, enemy, Vector2(MAX_X + 100, 0), Enums.Owner.ENEMY)
 	
 func init_player(map_state: MapState, shroom_object, spawn_position: Vector2, player_owner):

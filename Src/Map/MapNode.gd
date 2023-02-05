@@ -107,7 +107,7 @@ func _process(delta):
 func handle_attack(delta):
 	if (attacker == Enums.Owner.ENEMY):
 		health -= GameEngine.enemy_damage_output * delta
-		print("Attack! New health:" + str(health))
+		# print("Attack! New health:" + str(health))
 		
 	if (attacker == Enums.Owner.PLAYER):
 		health -= GameEngine.player_damage_output * delta

@@ -19,7 +19,7 @@ var map_generator : MapGenerator
 var map_state : MapState
 
 const CONTROL_TIME = 20
-const DRAFT_TIMER = 5
+const DRAFT_TIMER = 3
 
 var player_growth_speed = 20
 var enemy_growth_speed = -10

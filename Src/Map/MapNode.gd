@@ -42,7 +42,7 @@ func add_edge(other_node: MapNode) -> bool:
 	edge.map_node_1 = self
 	edge.map_node_2 = other_node
 	edge.points = [position, other_node.position]
-	edge.init_text()
+	# edge.init_text()
 	
 	edges.append(edge)
 	other_node.edges.append(edge)

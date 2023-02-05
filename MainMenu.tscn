@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlptxyf8b6n87"]
+[gd_scene load_steps=7 format=3 uid="uid://dlptxyf8b6n87"]
 
 [ext_resource type="PackedScene" uid="uid://chgser4ikhx1t" path="res://Src/UI/ControlForMainMenuUI.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://cgriras0uwarm" path="res://GFX Assets/MainBG4K.jpg" id="2"]
 [ext_resource type="AudioStream" uid="uid://b74vw78uees6s" path="res://Audio/FGJ23_Shroom_rts_main_theme.wav" id="3_kwmt5"]
 [ext_resource type="AudioStream" uid="uid://cfl6ti6ro1a0c" path="res://Audio/FGJ23_Shroom_rts_transition.wav" id="4_i4yea"]
 [ext_resource type="PackedScene" uid="uid://cvhoym4wo74tk" path="res://SettingsMenuControl.tscn" id="5_6dktq"]
+[ext_resource type="Texture2D" uid="uid://ba6mj8vcpnpf5" path="res://GFX Assets/Title_logo.png" id="6_sgg7i"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-24, -8)
@@ -61,5 +62,14 @@ offset_left = 455.0
 offset_top = 287.0
 offset_right = 825.0
 offset_bottom = 573.0
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 327.0
+offset_top = 58.0
+offset_right = 871.0
+offset_bottom = 264.0
+texture = ExtResource("6_sgg7i")
+expand_mode = 1
+stretch_mode = 4
 
 [editable path="ControlForMainMenuUI"]

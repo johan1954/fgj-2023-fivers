@@ -79,6 +79,9 @@ func init_text():
 		
 func get_balanced_weight(health):
 	return (health + GameEngine.CONTROL_TIME) / (GameEngine.CONTROL_TIME * 2)
+	
+func neutralize_edge():
+	control = 0
 
 func intersect_with(C: Vector2, D: Vector2) -> bool:
 	var A := points[0]

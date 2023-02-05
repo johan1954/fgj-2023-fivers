@@ -66,6 +66,8 @@ func edge_distance_to_self(p1: Vector2, p2: Vector2) -> float:
 	return p3.distance_to(projection)
 	
 func capture_node(new_owner: Enums.Owner):
+	if belongs_to == new_owner:
+		return
 	belongs_to = new_owner
 	health = 20
 	capture_all_edges(new_owner)
@@ -118,5 +120,14 @@ func handle_attack(delta):
 	if (health < 0):
 		capture_node(attacker)
 		attacker = Enums.Owner.NONE
-	
-	
+		
+func neutralize_node():
+	belongs_to = Enums.Owner.NONE
+	modulate = Color.WHITE
+	health = 0
+	for edge in edges:
+		edge.neutralize_edge()
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		GameEngine.get_card_manager().handle_node_press(self)

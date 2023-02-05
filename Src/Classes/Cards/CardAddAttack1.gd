@@ -20,4 +20,4 @@ func _process(delta):
 		GameEngine.player_damage_output -= ATTACK_AMOUNT
 		timer = 0
 		activated = false
-		card_manager.reset_card(self)
+		GameEngine.get_card_manager().reset_card(self)

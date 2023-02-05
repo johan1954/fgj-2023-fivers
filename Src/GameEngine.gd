@@ -16,14 +16,16 @@ func _unhandled_input(event):
 			#get_tree().change_scene_to_file("res://MainMenu.tscn")
 
 var map_generator : MapGenerator
+var card_manager : CardManager
 
 const CONTROL_TIME = 20
+const DRAFT_TIMER = 5
 
-var player_growth_speed = 30
+var player_growth_speed = 20
 var enemy_growth_speed = -5
 
 var player_damage_output = 0
-var enemy_damage_output = 5
+var enemy_damage_output = 10
 
 var _main_volume_bus := AudioServer.get_bus_index("Master")
 var _music_volume_bus := AudioServer.get_bus_index("Music")
@@ -35,6 +37,7 @@ func start_game():
 	
 	map_generator = MapGenerator.new()
 	map_generator.generate_map()
+	card_manager = CardManager.new()
 
 #	var new_card_button = AssetsPreload.CARD_BUTTON_NODE.instantiate()
 #	Map.add_child(new_card_button)

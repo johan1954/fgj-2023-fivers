@@ -12,7 +12,7 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	card_container = get_node("/root/Scene/UI/CardContainer")
+	card_container = get_node("/root/Scene/UI/Control/CardContainer")
 	var card_add_attack = CardAddAttack1.new()
 	card_add_attack.card_manager = self
 	base_cardpack.append(card_add_attack)

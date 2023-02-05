@@ -1,13 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://cc2p0j2lkepgr"]
 
-[ext_resource type="Texture2D" uid="uid://b76ckw5obeemt" path="res://GFX Assets/Base_1.png" id="1_qyds6"]
+[ext_resource type="Texture2D" uid="uid://blemfjkqt245p" path="res://GFX Assets/Base_1small.png" id="1_8q7bd"]
 [ext_resource type="Script" path="res://Src/UI/buttons/CardButton.gd" id="2_t4ft6"]
 
 [node name="CardButton" type="TextureButton"]
-offset_right = 822.0
-offset_bottom = 1122.0
-scale = Vector2(0.4, 0.4)
-texture_normal = ExtResource("1_qyds6")
+custom_minimum_size = Vector2(150, 205)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -207.0
+offset_right = 150.0
+offset_bottom = -2.0
+grow_vertical = 0
+texture_normal = ExtResource("1_8q7bd")
+ignore_texture_size = true
 script = ExtResource("2_t4ft6")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

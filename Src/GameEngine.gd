@@ -1,7 +1,7 @@
 extends Node
 
 #func _ready():
-#	AudioServer.playback_speed_scale = 2.0
+#	AudioServer.playback_speed_scale = 5.0
 
 func _unhandled_input(event):
 	if event is InputEventKey:

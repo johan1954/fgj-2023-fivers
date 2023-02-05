@@ -9,6 +9,8 @@ var active_cardpack : Array[CardBase]
 var pending_card : CardBase
 var pending_card_button : CardButton
 var timer : float = 0
+var victory_condition_timer : float = 0
+var game_stopped = false
 
 var rng = RandomNumberGenerator.new()
 
@@ -48,6 +50,15 @@ func reset_card(card):
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if game_stopped == true:
+		return
+	
+	victory_condition_timer += delta
+	
+	if (victory_condition_timer >= 3):
+		victory_condition_timer = victory_condition_timer - 3
+		check_victory_lose_condition()
+	
 	if base_cardpack.size() == 0:
 		timer = 0
 		return
@@ -60,5 +71,30 @@ func _process(delta):
 	if (timer >= GameEngine.DRAFT_TIMER):
 		create_cards_from_pack(3)
 		timer = timer - GameEngine.DRAFT_TIMER
+
+func check_victory_lose_condition():
+	var number_of_enemy_nodes = 0
+	var number_of_player_nodes = 0
+	for node in GameEngine.map_state.nodes:
+		if node.belongs_to == Enums.Owner.PLAYER:
+			number_of_player_nodes += 1
+		if node.belongs_to == Enums.Owner.ENEMY:
+			number_of_enemy_nodes += 1
 	
-	pass
+	if number_of_enemy_nodes == 0:
+		var dialog = AcceptDialog.new()
+		dialog.dialog_text = "Your mushroom is victorious!"
+		dialog.title = "Victory!"
+		dialog.ok_button_text = "OK"
+		dialog.visible = true
+		get_tree().get_current_scene().add_child(dialog,true)
+		game_stopped = true
+	
+	if number_of_player_nodes == 0:
+		var dialog = AcceptDialog.new()
+		dialog.dialog_text = "Your have been eliminated!"
+		dialog.title = "Lose"
+		dialog.ok_button_text = "OK"
+		dialog.visible = true
+		get_tree().get_current_scene().add_child(dialog,true)
+		game_stopped = true

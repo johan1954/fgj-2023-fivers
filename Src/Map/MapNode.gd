@@ -66,6 +66,8 @@ func edge_distance_to_self(p1: Vector2, p2: Vector2) -> float:
 	return p3.distance_to(projection)
 	
 func capture_node(new_owner: Enums.Owner):
+	if belongs_to == new_owner:
+		return
 	belongs_to = new_owner
 	health = 20
 	capture_all_edges(new_owner)

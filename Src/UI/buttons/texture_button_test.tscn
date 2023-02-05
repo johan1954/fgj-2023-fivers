@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bquhn8kqsaj1f"]
+
+[ext_resource type="Texture2D" uid="uid://c31r848ds1fwu" path="res://GFX Assets/icon.png" id="1_mmbob"]
+[ext_resource type="Script" path="res://Src/UI/scripts/texture_button_test.gd" id="2_ga5xq"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 256.0
+offset_bottom = 256.0
+texture_normal = ExtResource("1_mmbob")
+stretch_mode = 5
+script = ExtResource("2_ga5xq")

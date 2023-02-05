@@ -19,17 +19,25 @@ var _main_volume_bus := AudioServer.get_bus_index("Master")
 var _music_volume_bus := AudioServer.get_bus_index("Music")
 var _sfx_volume_bus := AudioServer.get_bus_index("SFX")
 
+func alert(alert_text: String, title: String='Message') -> void:
+	var dialog = AcceptDialog.new()
+	dialog.dialog_text = alert_text
+	dialog.add_cancel_button ("Cancel")
+	dialog.title = title
+	dialog.ok_button_text = "Yes"
+	dialog.set_script(load("res://Src/UI/scripts/exitGameConfirmationDialog.gd"))
+	dialog.connect("confirmed", Callable(dialog,'delete_all'))
+	add_child(dialog,true)
+	dialog.popup_centered()
+
+
+
 func _unhandled_input(event):
 	if event is InputEventKey:
 		#print("InputEventKey ar den ", event.keycode)
 		if event.pressed and event.keycode == KEY_ESCAPE:
-			GlobalAudio.playSoundEffect()
-			var map = get_node("/root/Map")
-			for child in map.get_children():
-				child.queue_free()
-			
-			print("Kiitos ohjelman käytöstä!")
-			get_tree().quit()
+			alert("Are you sure you want to quit game", "Quit game?")
+			#get_tree().quit()
 #			get_tree().change_scene_to_file("res://MainMenu.tscn")
 
 		#Easter eggs. Speed up music volume and increase volume

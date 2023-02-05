@@ -27,9 +27,7 @@ func alert(alert_text: String, title: String='Message') -> void:
 	dialog.ok_button_text = "Ole hyvä!"
 	dialog.set_script(load("res://Src/UI/scripts/exitGameAcceptDialog.gd"))
 	dialog.connect("confirmed", Callable(dialog,'_on_cancel_btn_is_pressed'))
-	#dialog.set_script(_on_cancle_btn_is_pressed)
 	add_child(dialog,true)
-	print(dialog)
 	dialog.popup_centered()
 	
 

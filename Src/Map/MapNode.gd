@@ -80,6 +80,9 @@ func capture_all_edges(new_owner):
 			i.belongs_to = new_owner
 			i.control = 0
 		if (i.belongs_to == Enums.Owner.ENEMY):
+			if (GameEngine.player_damage_output > 0):
+				i.belongs_to = new_owner
+				i.control = 0
 			continue
 
 func _process(delta):

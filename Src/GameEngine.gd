@@ -13,7 +13,6 @@ func _unhandled_input(event):
 			#get_tree().change_scene_to_file("res://MainMenu.tscn")
 
 var map_generator : MapGenerator
-var card_manager : CardManager
 
 const CONTROL_TIME = 20
 const DRAFT_TIMER = 5
@@ -27,7 +26,6 @@ var enemy_damage_output = 10
 func start_game():
 	map_generator = MapGenerator.new()
 	map_generator.generate_map()
-	card_manager = CardManager.new()
 
 #	var new_card_button = AssetsPreload.CARD_BUTTON_NODE.instantiate()
 #	Map.add_child(new_card_button)
@@ -39,3 +37,5 @@ func start_game():
 #	new_card_button.message = "Test 2"
 #	new_card_button.console_print()
 	
+func get_card_manager():
+	return get_node("/root/Scene/GlobalScripts/CardManager")

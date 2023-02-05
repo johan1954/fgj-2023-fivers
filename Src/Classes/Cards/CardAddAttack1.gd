@@ -19,4 +19,4 @@ func _process(delta):
 		GameEngine.enemy_damage_output -= 10
 		timer = 0
 		activated = false
-		card_manager.reset_card(self)
+		GameEngine.get_card_manager().reset_card(self)
